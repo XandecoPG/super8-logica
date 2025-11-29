@@ -80,9 +80,46 @@ function paciente() {
         "Urgência: " + urgencia + "\n" +
         "Tempo de espera: " + tempoEspera + " minutos"
     );
-
-
-
-
 }
+
+function exercicio01() {
+    let nome = prompt("Digite seu nome");
+    let idade = parseInt(prompt("Digite a Idade"));
+    const cidade = prompt("Digite a cidade");
+    let tempoder = confirm("Tem poder?");
+    let poder = ""
+    if (tempoder === true) {
+        poder = prompt("Qual o poder?");
+    }
+    const atuacao = prompt("Quantas atuações teve este mês?")
+
+    alert(
+        "Ficha do player:\n" +
+        "\nNome: " + nome +
+        "\nIdade: " + idade +
+        "\nCidade: " + cidade +
+        "\nPoder: " + (tempoder ? poder : "Não possui") +
+        "\nAtuações: " + atuacao
+
+    )
+}
+
+function exercicio02() {
+    let lateralDireita = parseFloat(prompt("Qual o tamanho da lateral direita?"));
+    let lateralInferior = parseFloat(prompt("Qual o tamanho da lateral inferior?"));
+    let area = lateralDireita * lateralInferior;
+
+    alert(
+        "Soma dos tamanhos\n" +
+        "\nLateral Direita " + lateralDireita +
+        "\nLateral Inferior " + lateralInferior +
+        "\nResultado " + area
+
+    )
+}
+
+
+
+
+
 
