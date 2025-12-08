@@ -141,6 +141,190 @@ function exercicio03() {
 
 }
 
+function exercicio04() {
+    let nome = prompt("Qual o nome do produto?");
+    let preco = parseFloat(prompt("Qual o valor?"));
+    let quantidade = parseInt(prompt("Comprou quantos?"));
+    let soma = quantidade * preco;
+    let premium = confirm("É assinante?");
+    let assinante = ""
+    if (premium) {
+        soma = soma * 0.9;
+    }
+
+    alert(
+        "Dados da compra: \n" +
+        "\nProduto: " + nome +
+        "\nValor do produto: " + preco +
+        "\nQuantidade: " + quantidade +
+        "\nValor: R$ " + soma
+
+    )
+
+}
+
+
+function exercicio05() {
+    const nome = prompt("Qual o nome do aluno?");
+    let nota1 = parseFloat(prompt("Qual a primeira nota?"));
+    let nota2 = parseFloat(prompt("Qual a segunda nota?"));
+    let nota3 = parseFloat(prompt("Qual a terceira nota?"));
+    let media = (nota1 + nota2 + nota3) / 3
+    let situacao;
+    if (media >= 7) {
+        situacao = "Aprovado";
+    }
+    else if (media >= 5 && media < 7) {
+        situacao = "Recuperação";
+    }
+    else {
+        situacao = "Reprovado"
+    }
+
+    alert(
+        "Boletim \n " +
+        "\nNome: " + nome +
+        "\nPrimeira nota: " + nota1 +
+        "\nSegunda nota: " + nota2 +
+        "\nTerceira nota: " + nota3 +
+        "\nMédia: " + media +
+        "\nSituação: " + (media ? situacao : "")
+
+    )
+
+}
+
+
+function exercicio06() {
+    const carro = prompt("Qual é o carro?")
+    const modelo = prompt(`Qual o modelo do carro? 
+        [Hatch, Picapes, SUVs e Sedans]`);
+    let ano = parseInt(prompt("Qual o ano do carro?"));
+    let preco = parseFloat(prompt("Qual o valor do carro?"));
+    let parcela = parseInt(prompt("Parcelado em quantas vezes?"));
+    let valorparcela = preco / parcela;
+    let seguro = confirm("Aceita incluir seguro?")
+    if (seguro === true) {
+        valorparcela = valorparcela + 150
+    }
+
+    alert(
+        "Carro \n" +
+        "\nCarro: " + carro +
+        "\nModelo: " + modelo +
+        "\nAno: " + ano +
+        "\nPreço: R$" + preco +
+        "\nParcelas:" + parcela + "x" +
+        "\nSeguro: " + (seguro ? "Sim" : "Não") +
+        "\nValor da parcela: R$" + valorparcela
+
+    );
+}
+
+function exercicio07() {
+    const nome = prompt("Qual o nome do jogo?");
+    let horas = parseFloat(prompt("Joga quantas horas por dia?"));
+    let dias = parseInt(prompt("Quantos dias na semana?"));
+    let total = horas * dias
+    let online = confirm("É online?");
+
+    alert(
+        "Game \n" +
+        "\nNome: " + nome +
+        "\nHoras por dia: " + horas +
+        "\nDias por semana: " + dias +
+        "\nTotal de horas: " + total + "h" +
+        "\nOnline: " + (online ? "Sim" : "Não")
+
+    )
+
+
+}
+
+
+function exercicio08() {
+    const nome = prompt("Nome do restaurante?");
+    let conta = parseFloat(prompt("Valor da conta?"));
+    let pessoas = parseInt(prompt("Quantas pessoas há na mesa?"));
+    let taxa = confirm("Será incluído a taxa?");
+    if (taxa === true) {
+        conta = conta * 1.10;
+    }
+    let divido = conta / pessoas;
+
+    alert(
+        "Conta \n" +
+        "Restaurante: " + nome +
+        "\nValor final da conta: R$ " + conta +
+        "\nPessoas: " + pessoas +
+        "\nIncluir taxa: " + (taxa ? "Sim" : "Não") +
+        "\nValor por pessoa: R$ " + divido
+    );
+
+}
+
+function exercicio09() {
+    let nome = prompt("Nome do funcionário");
+    let base = parseFloat(prompt("Qual o salário base"));
+    let extra = parseFloat(prompt("Qual o valor das horas extras?"));
+    let desconto = parseFloat(prompt("Quanto é descontado?"));
+    let salario = base + extra - desconto;
+    let imposto;
+    if (salario > 3000) {
+        imposto = "Imposto Alto";
+    }
+    else if (salario <= 3000) {
+        imposto = "Imposto Padrão";
+    }
+
+    alert(
+        "Folha de pagamento \n" +
+        "\nNome do Funcionário:" + nome +
+        "\nSalário Base: R$" + base +
+        "\nHora Extra: R$" + extra +
+        "\nDescontos: R$" + desconto +
+        "\nSalário Final: R$" + salario +
+        "\nTipo de imposto:  " + imposto
+
+    )
+}
+
+/*Criar uma função exercicio10
+- Solicitar o nome do cliente
+- Solicitar o saldo atual da conta (número)
+- Solicitar o valor de um depósito (número)
+- Atualizar o saldo com o depósito
+- Solicitar o valor de um saque (número)
+- Verificar se o saque é menor ou igual ao saldo
+    - Se for possível, atualizar o saldo subtraindo o saque
+    - Se não for possível, não alterar o saldo e avisar que saldo é insuficiente
+- Apresentar o nome do cliente e o saldo final da conta
+*/
+function exercicio10() {
+    let nome = prompt("Qual seu nome?");
+    let saldo = parseFloat(prompt("Qual o seu saldo atual?"));
+    let deposito = parseFloat(prompt("Qual o valor do depósito?"));
+    let saldoatual = saldo + deposito;
+    let saque = parseFloat(prompt("Qual o valor do saque?"));
+    let saldo2;
+
+    if (saque <= saldoatual) {
+        saldo2 = saldoatual - saque;
+        alert(
+            "Cliente: " + nome +
+            "\nSaque realizado com sucesso!" +
+            "\nSaldo final: R$ " + saldo2
+        );
+    } else {
+        saldo2 = saldoatual;
+        alert(
+            "Cliente: " + nome +
+            "\nSaldo insuficiente. Saque não realizado." +
+            "\nSaldo final: R$ " + saldo2
+        );
+    }
+}
+
 
 
 
