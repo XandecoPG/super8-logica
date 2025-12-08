@@ -118,6 +118,30 @@ function exercicio02() {
     )
 }
 
+function exercicio03() {
+    let nomefilme = prompt("Digite o nome do filme");
+    let anolancamento = parseInt(prompt("Qual o ano de lançamento?"));
+    let duracao = parseFloat(prompt("Qual a duração do filme?(Em minutos)"));
+    let genero = prompt("Qual o gênero do filme?");
+    let assistido = confirm("Já assistiu?");
+    let assistiu = ""
+    if (assistido === true) {
+        assistiu = prompt("Quantas Vezes?");
+    }
+
+    alert(
+        "Dados do filme:\n" +
+        "\nNome do filme: " + nomefilme +
+        "\nAno de Lançamento: " + anolancamento +
+        "\nDuração do filme: " + duracao +
+        "\nGênero: " + genero +
+        "\nJá foi assistido: " + (assistiu ? assistido : "Não")
+    )
+
+
+}
+
+
 
 
 
