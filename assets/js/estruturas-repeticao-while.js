@@ -358,7 +358,7 @@ function exercicio01() {
 
     while (indice < 5) {
         let nome = prompt("Digite o nome do aluno ");
-        alert("Aluno Cadastrado" + nome);
+        alert("Aluno Cadastrado " + nome);
         indice = indice + 1;
     }
     alert("Cadastro Finalizado");
@@ -375,7 +375,7 @@ function exercicio01() {
     - Incrementar o indice.
 - Ao final, mostrar um alert "Obrigado por informar suas cores favoritas".*/
 
-function exercicio02 () {
+function exercicio02() {
     let indice = 0;
 
     while (indice < 4) {
@@ -396,13 +396,13 @@ function exercicio02 () {
     - Incrementar o indice.
 - Ao final, mostrar um alert "Planejamento de viagem concluído".*/
 
-function exercicio03 () {
+function exercicio03() {
     let indice = 0;
 
     while (indice < 3) {
         let cidade = prompt("Digite o nome da cidade que deseja viajar");
         alert("Destino " + (indice + 1) + ": " + cidade);
-        indice = indice +  1;
+        indice = indice + 1;
     }
 
     alert("Planjamento de viagem concluído");
@@ -420,7 +420,7 @@ function exercicio03 () {
     - Incrementar o indice.
 - Ao final, mostrar um alert com "Soma total: " + soma.*/
 
-function exercicio04 () {
+function exercicio04() {
     let indice = 0;
     let soma = 0;
     while (indice < 5) {
@@ -429,7 +429,7 @@ function exercicio04 () {
         indice = indice + 1
     }
 
-    alert("Soma total: " + soma) 
+    alert("Soma total: " + soma)
 }
 
 
@@ -465,9 +465,9 @@ function exercicio05() {
 function exercicio06() {
     let indice = 0;
     let soma = 0;
-    
 
-    while(indice < 5) {
+
+    while (indice < 5) {
         let numero = parseInt(prompt("Digite um número para somar"));
         soma = soma + numero
         indice = indice + 1
@@ -491,10 +491,10 @@ function exercicio07() {
         let venda = parseFloat(prompt("Digite o valor da venda"))
         totalVendas = totalVendas + venda
         indice = indice + 1
-        alert ("Valor: " + venda +
+        alert("Valor: " + venda +
             "\nTotal: " + totalVendas
         )
-        
+
     }
 
     let comissao = totalVendas * 0.05
@@ -513,6 +513,18 @@ function exercicio07() {
 - Apresentar se o número é par
 - Apresentar se o número é ímpar */
 
+function exercicio08() {
+    for (let i = 1; i <= 10; i++) {
+        let numero = Number(prompt("Digite um número:"));
+
+        if (numero % 2 === 0) {
+            alert("O número " + numero + " é par");
+        } else {
+            alert("O número " + numero + " é ímpar");
+        }
+    }
+}
+
 /* 9. Criar uma função exercicio09()
 - Solicitar um número para o usuário
 - Apresentar a tabuada desse número utilizando while
@@ -523,10 +535,52 @@ function exercicio07() {
 - 5 x 10 = 50
 - O número(5) apresentado foi digitado pelo usuário, ou seja, deve apresentar a tabuada do número digitado */
 
+function exercicio09() {
+    let indice = 1;
+    let tabuada = "";
+
+    numero = parseInt(prompt("Digite um número"));
+    alert("A tabuada do " + numero)
+    while (indice < 11) {
+        resultado = numero * indice;
+        tabuada = tabuada + numero + " x " + indice + " = " + resultado + " \n";
+        indice = indice + 1;
+    }
+
+    alert(tabuada
+    )
+
+}
+
 /* 10. Criar uma função exercicio10()
 - Solicitar 10 números
 - Apresentar a quantidade de números pares
 - Apresentar a quantidade de números ímpares */
+
+function exercicio10() {
+    let indice = 0;
+    let numero = 0;
+    let par = 0;
+    let impar = 0;
+
+    alert("Digite 10 números")
+
+    while (indice < 10) {
+        numero = Number(prompt("Digite um número"))
+        indice = indice + 1;
+
+        if (numero % 2 === 0) {
+            par = par + 1;
+        } else {
+            impar = impar + 1;
+        }
+    }
+
+    alert("Quantidade de números pares: " + par
+        + "\nQuantidade de números ímpares: " + impar
+    )
+
+}
 
 /* 11. Criar uma função exercicio11()
 - Solicitar 4 notas de um aluno utilizando enquanto
