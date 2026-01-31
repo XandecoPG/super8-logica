@@ -133,6 +133,44 @@ function calcularFolhasPagamento() {
     }
 }
 
+function jogoPalavras() {
+    let palavras = ["Roblox", "Free Fire", "GTA"];
+    let nomeJogador = prompt("Digite seu nome de jogador");
+    let quantidadeTentativas = 10;
+    
+    if (nomeJogador.toLowerCase().includes("Lorenzo")) {
+        quantidadeTentativas = 3;
+    }
+
+    while(quantidadeTentativas >= 0) {
+        let nomeJogo  = prompt("Tente adivinhar o nome dos 3 jogos");
+        //Verificando se o nome que o usuário digitou está dentro da lista
+        if(palavras.includes(nomeJogo)) {
+            //Dar mais 3 tentativas a cada acerto
+            quantidadeTentativas += 3;
+            //Como descobrir a posição
+            let indiceJogo = palavras.indexOf(nomeJogo);
+            // remover da lista o jogo que acertou
+            palavras.splice(indiceJogo, 1);
+            console.log(palavras);
+            alert(`Acertou ${nomeJogo}`);
+            if (palavras.length === 0){
+                alert("Ganhou o jogo");
+                break;
+            }
+        }else {
+            //Decrementar em 1
+            quantidadeTentativas -= 1;
+            alert(`Errou\nVocê tem ${quantidadeTentativas} tentativas restantes`);
+        }
+        console.log("Quantidade de tentativas: " + quantidadeTentativas + "\npalavras: " + palavras);
+        if(quantidadeTentativas <= 0){
+            alert("Perdeu o jogo");
+            break;
+        }
+    }
+}
+
 //        [0, 1, 2, 3]
 // numeros = [1, 3, 4, 9]
 // soma = 17
